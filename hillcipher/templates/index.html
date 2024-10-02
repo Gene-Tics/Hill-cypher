@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Cipher</title>
+</head>
+<body>
+    <h1>Hill Cipher Encryption/Decryption</h1>
+    <form method="POST">
+        <label for="matrix_size">Matrix Size (2 for 2x2, 3 for 3x3):</label><br>
+        <input type="number" name="matrix_size" value="{{ matrix_size }}" min="2" max="3" required><br><br>
+
+        <label for="operation">Operation:</label><br>
+        <input type="radio" name="operation" value="encrypt" checked> Encrypt
+        <input type="radio" name="operation" value="decrypt"> Decrypt<br><br>
+
+        <div id="key_matrix">
+            <h3>Enter Key Matrix:</h3>
+            {% for i in range(matrix_size) %}
+                {% for j in range(matrix_size) %}
+                    <input type="number" name="key_{{ i }}_{{ j }}" required>
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </div>
+
+        <label for="plaintext">Plaintext (for encryption):</label><br>
+        <input type="text" name="plaintext" placeholder="Enter plaintext" required><br><br>
+
+        <label for="ciphertext">Ciphertext (for decryption):</label><br>
+        <input type="text" name="ciphertext" placeholder="Enter ciphertext"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if ciphertext %}
+        <h3>Encrypted Text: {{ ciphertext }}</h3>
+    {% endif %}
+    {% if decrypted_message %}
+        <h3>Decrypted Message: {{ decrypted_message }}</h3>
+    {% endif %}
+    {% if error %}
+        <h3 style="color: red;">Error: {{ error }}</h3>
+    {% endif %}
+</body>
+</html>

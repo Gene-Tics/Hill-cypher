@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Cipher Encryption/Decryption System Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+        ul, p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        strong {
+            color: #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #bdc3c7;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        /* Adding some hover effect */
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #dff9fb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hill Cipher Encryption/Decryption System Documentation</h1>
+    <p><strong>Authors:</strong> Bryan Ross Vocales & Eugene Albert Navarro</p>
+    <p><strong>Date:</strong> Created on 09/21/24, Last Modified on 09/25/24</p>
+    <p><strong>Version:</strong> 1.0</p>
+
+    <h2>Purpose:</h2>
+    <p>This program implements the Hill cipher algorithm to encrypt and decrypt plaintext messages using a matrix-based key.</p>
+
+    <h2>System Requirements:</h2>
+    <ul>
+        <li><strong>Hardware:</strong> CPU: Minimum 1 GHz processor, RAM: Minimum 512MB, Storage: Minimum 50MB for Python and libraries.</li>
+        <li><strong>Software:</strong> Any OS supporting Python 3.x (Windows, Linux, macOS).</li>
+        <li><strong>Python Version:</strong> Python 3.x.</li>
+        <li><strong>Required Libraries:</strong> NumPy (for matrix operations).</li>
+    </ul>
+
+    <h2>Functional Description:</h2>
+    <h3>Input:</h3>
+    <ul>
+        <li>Plaintext: A string of alphabetic characters (A-Z). Non-alphabetic characters are removed.</li>
+        <li>Key Matrix: A square matrix (e.g., 2x2 or 3x3) used for encryption and decryption.</li>
+    </ul>
+
+    <h3>Processing:</h3>
+    <ul>
+        <li>The plaintext is converted to numerical values (A=0, B=1, …, Z=25).</li>
+        <li>The plaintext is padded if needed to match the key matrix size.</li>
+        <li>For encryption, matrix multiplication is performed between the key matrix and the plaintext column vector, and the result is taken modulo 26.</li>
+        <li>For decryption, the inverse of the key matrix is computed, and similar multiplication and modulo operations are performed.</li>
+    </ul>
+
+    <h3>Output:</h3>
+    <ul>
+        <li>Encrypted Text: A string of encrypted characters based on the Hill cipher.</li>
+        <li>Decrypted Text: The original plaintext, restored from the encrypted message.</li>
+    </ul>
+
+    <h2>Security Considerations:</h2>
+    <h3>Vulnerability Assessment:</h3>
+    <ul>
+        <li>Susceptible to frequency analysis attacks if used with short messages.</li>
+        <li>The key matrix must be invertible for successful decryption.</li>
+    </ul>
+
+    <h3>Mitigation Strategies:</h3>
+    <ul>
+        <li>Use longer plaintexts or messages to mitigate frequency analysis.</li>
+        <li>Ensure the matrix key is carefully selected to be invertible under mod 26.</li>
+    </ul>
+
+    <h2>Testing:</h2>
+    <ul>
+        <li>Encrypt and decrypt test cases to verify correct functionality.</li>
+        <li>Test with different key matrices to ensure invertibility and correctness.</li>
+    </ul>
+
+    <h2>Usage Instructions:</h2>
+    <ul>
+        <li><strong>Installation:</strong> Install Python 3.x from <a href="https://www.python.org/downloads/">python.org</a>. Install the NumPy library using <code>pip install numpy</code>.</li>
+        <li><strong>Configuration:</strong> Modify the key matrix in the code to change the encryption key.</li>
+        <li><strong>Execution:</strong> Run the program by executing <code>python hill_cipher.py</code> in the command line. Follow prompts to input plaintext and observe encrypted and decrypted results.</li>
+    </ul>
+
+    <h2>Error Handling:</h2>
+    <ul>
+        <li><strong>Error Codes:</strong> 
+            <ul>
+                <li>Invalid Matrix: If the key matrix is not invertible, decryption will fail.</li>
+                <li>Invalid Characters: Non-alphabetic characters are automatically ignored during input.</li>
+            </ul>
+        </li>
+        <li><strong>Recovery Procedures:</strong> Ensure the key matrix is invertible and adjust the input plaintext to contain only alphabetic characters.</li>
+    </ul>
+
+    <h2>Maintenance Log:</h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Changes</th>
+            <th>Author</th>
+        </tr>
+        <tr>
+            <td>2024-09-24</td>
+            <td>Initial creation of the program.</td>
+            <td>Bryan Ross Vocales & Eugene Albert Navarro</td>
+        </tr>
+        <tr>
+            <td>2024-10-2</td>
+            <td>Additional features or bug fixes.</td>
+            <td>Bryan Ross Vocales & Eugene Albert Navarro</td>
+        </tr>
+    </table>
+
+    <h2>Additional Documentation Tools:</h2>
+    <ul>
+        <li><strong>Docstrings:</strong> Each function has a docstring describing its purpose, parameters, and return values.</li>
+        <li><strong>Version Control:</strong> Use Git for version control. Example commands: <code>git init</code>, <code>git add hill_cipher.py</code>, <code>git commit -m "Initial Hill Cipher implementation"</code>.</li>
+    </ul>
+
+</body>
+</html>
