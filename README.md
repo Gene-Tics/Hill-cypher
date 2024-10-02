@@ -1,5 +1,3 @@
-Here is the complete `README.md` file content in code format:
-
 ```markdown
 # Hill Cipher Encryption/Decryption System
 
