@@ -1,23 +1,31 @@
 ```markdown
-# Hill Cipher Encryption/Decryption System
+# 🎉 Hill Cipher Encryption/Decryption System 🎉
+
+![Hill Cipher Image](https://example.com/your-image.png) <!-- Replace with a real image URL -->
 
 **Authors**: Bryan Ross Vocales & Eugene Albert Navarro  
 **Date**: Created on 09/21/24, Last Modified on 09/25/24  
-**Version**: 1.0  
+**Version**: 1.0 ![version](https://img.shields.io/badge/version-1.0-blue) ![status](https://img.shields.io/badge/status-active-brightgreen)
 
-## Purpose:
-This program implements the Hill cipher algorithm to encrypt and decrypt plaintext messages using a matrix-based key.
+---
 
-## System Requirements:
-- **Hardware**: 
-  - CPU: Minimum 1 GHz processor
-  - RAM: Minimum 512MB
-  - Storage: Minimum 50MB for Python and libraries
-- **Software**: Any OS supporting Python 3.x (Windows, Linux, macOS)
-- **Python Version**: Python 3.x
+## 🔍 Purpose
+This program implements the **Hill cipher algorithm** to encrypt and decrypt plaintext messages using a matrix-based key.
+
+---
+
+## 🖥️ System Requirements:
+- **Hardware**:  
+  - 💻 CPU: Minimum 1 GHz processor  
+  - 🖥️ RAM: Minimum 512MB  
+  - 💾 Storage: Minimum 50MB for Python and libraries  
+- **Software**: Any OS supporting Python 3.x (Windows, Linux, macOS)  
+- **Python Version**: Python 3.x  
 - **Required Libraries**: NumPy (for matrix operations)
 
-## Functional Description:
+---
+
+## 🛠️ Functional Description:
 
 ### Input:
 - **Plaintext**: A string of alphabetic characters (A-Z). Non-alphabetic characters are removed.
@@ -30,10 +38,12 @@ This program implements the Hill cipher algorithm to encrypt and decrypt plainte
 - For decryption, compute the inverse of the key matrix and perform similar multiplication and modulo operations.
 
 ### Output:
-- **Encrypted Text**: A string of encrypted characters based on the Hill cipher.
-- **Decrypted Text**: The original plaintext, restored from the encrypted message.
+- 🔐 **Encrypted Text**: A string of encrypted characters based on the Hill cipher.
+- 🔓 **Decrypted Text**: The original plaintext, restored from the encrypted message.
 
-## Security Considerations:
+---
+
+## 🔒 Security Considerations:
 
 ### Vulnerability Assessment:
 - Susceptible to frequency analysis attacks if used with short messages.
@@ -43,11 +53,15 @@ This program implements the Hill cipher algorithm to encrypt and decrypt plainte
 - Use longer plaintexts to mitigate frequency analysis.
 - Ensure the matrix key is carefully selected to be invertible under mod 26.
 
-## Testing:
+---
+
+## ✅ Testing:
 - Encrypt and decrypt test cases to verify correct functionality.
 - Test with different key matrices to ensure invertibility and correctness.
 
-## Usage Instructions:
+---
+
+## 🚀 Usage Instructions:
 
 ### Installation:
 1. Install Python 3.x from [python.org](https://www.python.org/downloads/).
@@ -66,7 +80,9 @@ This program implements the Hill cipher algorithm to encrypt and decrypt plainte
   ```
 - Follow prompts to input plaintext and observe encrypted and decrypted results.
 
-## Error Handling:
+---
+
+## ⚙️ Error Handling:
 
 ### Error Codes:
 - **Invalid Matrix**: If the key matrix is not invertible, decryption will fail.
@@ -75,17 +91,25 @@ This program implements the Hill cipher algorithm to encrypt and decrypt plainte
 ### Recovery Procedures:
 - Ensure the key matrix is invertible and adjust the input plaintext to contain only alphabetic characters.
 
-## Maintenance Log:
+---
+
+## 📝 Maintenance Log:
 
 | Date       | Changes                               | Author                          |
 |------------|---------------------------------------|---------------------------------|
 | 2024-09-24 | Initial creation of the program.      | Bryan Ross Vocales & Eugene Albert Navarro |
 | 2024-10-02 | Additional features or bug fixes.     | Bryan Ross Vocales & Eugene Albert Navarro |
 
-## Additional Documentation Tools:
+---
+
+## 📚 Additional Documentation Tools:
 - **Docstrings**: Each function has a docstring describing its purpose, parameters, and return values.
 - **Version Control**: Use Git for version control. Example commands:  
   ```bash
   git init
   git add hill_cipher.py
   git commit -m "Initial Hill Cipher implementation"
+  ```
+
+---
+
