@@ -1,11 +1,9 @@
 ```markdown
 # 🎉 Hill Cipher Encryption/Decryption System 🎉
 
-![Hill Cipher Image](https://example.com/your-image.png) <!-- Replace with a real image URL -->
-
 **Authors**: Bryan Ross Vocales & Eugene Albert Navarro  
 **Date**: Created on 09/21/24, Last Modified on 09/25/24  
-**Version**: 1.0 ![version](https://img.shields.io/badge/version-1.0-blue) ![status](https://img.shields.io/badge/status-active-brightgreen)
+**Version**: 1.0 
 
 ---
 
